@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Scroll</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            user-select: none; /* Prevents text selection on the whole page */
+        }
+
+        .container {
+            display: flex;
+            overflow: hidden;
+            width: 90vw;
+            max-width: 1200px;
+            position: relative;
+        }
+
+        .card {
+            min-width: 300px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            cursor: grab;
+            user-select: none; /* Prevents text selection inside the card */
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            pointer-events: none; /* Prevents selection or dragging of the image */
+        }
+
+        .card h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .card p {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            pointer-events: none; /* Prevents clicking during drag */
+        }
+    </style>
+</head>
+<body>
+    <h1>Most Popular Cars</h1>
+    <div class="container" id="card-container">
+        <!-- cards dynamically add here -->
+    </div>
+
+    <script>
+        const container = document.getElementById('card-container');
+        const cardsData = [
+            { title: 'Car 1', description: 'Description for Car 1', imgSrc: 'https://via.placeholder.com/300x150?text=Car+1' },
+            { title: 'Car 2', description: 'Description for Car 2', imgSrc: 'https://via.placeholder.com/300x150?text=Car+2' },
+            { title: 'Car 3', description: 'Description for Car 3', imgSrc: 'https://via.placeholder.com/300x150?text=Car+3' },
+            { title: 'Car 4', description: 'Description for Car 4', imgSrc: 'https://via.placeholder.com/300x150?text=Car+4' },
+            { title: 'Car 5', description: 'Description for Car 5', imgSrc: 'https://via.placeholder.com/300x150?text=Car+5' },
+        ];
+
+        function createCard({ title, description, imgSrc }) {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = title;
+
+            const h3 = document.createElement('h3');
+            h3.textContent = title;
+
+            const p = document.createElement('p');
+            p.textContent = description;
+
+            const button = document.createElement('button');
+            button.className = 'button';
+            button.textContent = 'Book Now';
+
+            card.appendChild(img);
+            card.appendChild(h3);
+            card.appendChild(p);
+            card.appendChild(button);
+
+            return card;
+        }
+
+        cardsData.forEach(data => {
+            const card = createCard(data);
+            container.appendChild(card);
+        });
+
+        // Scroll functionality
+        let isDown = false;
+        let startX, scrollLeft;
+
+        container.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - container.offsetLeft;
+            scrollLeft = container.scrollLeft;
+            container.style.cursor = 'grabbing';
+        });
+
+        container.addEventListener('mouseleave', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mouseup', () => {
+            isDown = false;
+            container.style.cursor = 'grab';
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - container.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed adjustment
+            container.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body>
+</html>
