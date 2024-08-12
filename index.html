@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="shortcut icon" href="#">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="social-links">
+        <a href="#"><img src="./assets/photos/icons/facebook.svg" alt=""></i></a>
+        <a href="#"><img src="./assets/photos/icons/instagram.svg" alt=""></i></a>
+        <a href="#"><img src="./assets/photos/icons/x.svg" alt=""></i></a>
+        <a href="#"><img src="./assets/photos/icons/lindin.svg" alt=""></i></a>
+    </div>
+    <nav>
+        <div class="logo"><img src="./assets/photos/logo.svg" alt=""></div>
+        <div class="nav-options">
+            <ul>
+                <a href=""><li>About</li></a>
+                <a href=""><li>Offers</li></a>
+                <a href=""><li>Corporate</li></a>
+                <a href=""><li>Personal</li></a>
+                <a href=""><li>Locations</li></a>
+                <a href=""><li>Contact Us</li></a>
+                <a href=""><li><div class="messages"><i class="ri-notification-2-fill bell"></i><div class="notification-count" id="notification-count"></div></div></li></a>
+                <a href=""><li> <span class="profile"><div class="profile-pic">J</div>John Doe</span></li></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="notice-data">
+        <p> Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply | Follow us on Social Media for New Offers</p>
+    </div>
+
+    <!-- Hero section -->
+    <section class="hero"> 
+        <!-- Qiuck pickup section -->
+        <div class="quick-pickup">
+            <div class="pickup-options">
+                <div class="options"><button class="pickup-link">Same as Pick-Up <span class="line"></span></button></div>
+                <div class="options"><button class="pickup-link">Different Drop-Off <span class="line"></span></button></div>
+                <!-- car selector -->
+                <select name="vehicle" id="" class="vehicle-type">
+                    <option value="" disabled selected style="display: none;" >Select vehicle type</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="coupe">Coupe</option>
+                    <option value="suv">SUV</option>
+                </select>
+            </div>
+
+            <!-- Location selector -->
+            <div class="additional-details">
+                <div class="location">
+                    <img src="./assets/photos/icons/map-logo.svg" alt="" class="map-pin"></i>
+                    <select name="place" id="" class="location-list">
+                        <option value="al-quoz">Al Quoz</option>
+                        <option value="al-barsha"><i class="ri-map-pin-line"></i>Al Barsha</option>
+                        <option value="al-satwa"><i class="ri-map-pin-line"></i>Al Satwa</option>
+                    </select>
+                </div>
+
+
+                <!-- pickup time -->
+                <div class="pickup-time" id="dateTimeSelector">
+                    <div class="icon">
+                        <img src="./assets/photos/icons/calender.svg" alt="Calendar Icon" class="calender-icon">
+                    </div>
+                    <div class="date-time">
+                        <span class="date" id="selectedDate">Loading...</span>
+                        <span class="time" id="selectedTime">Loading...</span>
+                    </div>
+                    <div class="date-time-picker" id="dateTimePicker" style="display: none;">
+                        <input type="date" id="dateInput">
+                        <input type="time" id="timeInput">
+                        <button id="setDateTime">Set</button>
+                    </div>
+                </div>
+
+                <!-- Arrival time -->
+                <div class="pickup-time" id="arrivalDateTimeSelector">
+                    <div class="icon">
+                        <img src="./assets/photos/icons/calender.svg" alt="Calendar Icon" class="calender-icon">
+                    </div>
+                    <div class="date-time">
+                        <span class="date" id="selectedArrivalDate">Loading...</span>
+                        <span class="time" id="selectedArrivalTime">Loading...</span>
+                    </div>
+                    <div class="arrival-date-time-picker" id="arrivalDateTimePicker" style="display: none;">
+                        <input type="date" id="dateInput">
+                        <input type="time" id="timeInput">
+                        <button id="setDateTime">Set</button>
+                    </div>
+                </div>
+
+
+                <!-- Search button -->
+                 <div class="search-button">
+                    <button>
+                        <img src="./assets/photos/icons/search.svg" alt="">
+                    </button>
+                 </div>
+
+                 <span class="vertical-line"></span>
+
+                 <div class="quick-book">
+                    <button>Quick Book</button>
+                 </div>
+                
+            </div>
+
+            <div class="download-links">
+                <p class="download-description">
+                    Download our App for easy accessibility anytime, anywhere!
+                </p>
+
+                <a href="">
+                    <img src="./assets/photos/icons/appstore.svg" alt="">
+                </a>
+                <a href="">
+                    <img src="./assets/photos/icons/playstore.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Carousel section -->
+    <section class="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <!-- Slides will be dynamically injected here -->
+        </div>
+    
+        <!-- Indicators -->
+        <div class="carousel-indicators" id="carouselIndicators">
+            <!-- Indicators will be dynamically injected here -->
+        </div>
+    </section>
+
+    <!-- Cards section -->
+    <section class="car-cards">
+        <h2>Most popular cars</h2>
+
+        <div class="popular-cars" id="card_container">
+            <!-- Cards dynamically adds here -->
+        </div>
+    </section>
+
+
+    <!-- subscribe form section -->
+    <section class="subscribe">
+        <div class="offers-subscribe">
+            <h2>Subscribe here for exclusive offers and updates!</h2>
+            <form action="" class="subscribe-form">
+                
+                <div class="name-email">
+                    <input type="text" id="name" required placeholder="Name">
+                
+                    <input type="text" id="email" required placeholder="Email">
+                </div>
+                
+                <p class="subscribe-para">Don't miss out! enter your email and your name, then hit subscribe to unlock a world of special offers and details.</p>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="app-downloadLink">
+            <img src="./assets/photos/mobile-app.svg" alt="">
+            <div class="link-share">
+                <p>Enter your number and receive a direct link to download the app</p>
+                <input type="number" placeholder="Enter Phone Number">
+                <button>Get the link</button>
+                <p style="margin-top: 45px;">
+                    Get in on
+                </p>
+
+                <div class="playstore-appstore">
+                    <a href=""><img src="./assets/photos/icons/appstoreTransparent.svg" alt=""></a>
+                    <a href=""><img src="./assets/photos/icons/playstoreTransparent.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    
+
+
+
+
+
+    <script src="./assets/scripts/index.js"></script>
+</body>
+</html>
