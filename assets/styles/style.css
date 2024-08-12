@@ -1,0 +1,706 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    font-family: 'poppins';
+}
+
+body{
+    margin: 10px;
+    max-width: 100dvw;
+    height: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.social-links{
+    display: flex;
+    width: 100%;
+    height: 15px;
+    justify-content: flex-end;
+    column-gap: 16px;
+}
+
+.social-links i{
+    font-size: 16px;
+}
+
+.logo{
+    
+    width: 370px;
+    height: 54px;
+}
+
+
+/* Nav bar */
+
+nav{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 32px;
+    padding: 0;
+}
+
+ul li{
+    height: 23px;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+.messages,.profile{
+    display: flex;
+    flex-direction: row;
+    height: 29px;
+}
+
+.messages{
+    position: relative;
+}
+
+.bell{
+    font-size: 29px;
+}
+
+.notification-count{
+    position: absolute;
+    right: 0;
+    background-color: #38b000;
+    color: #fff;
+    font-size: 15px;
+    border: 2px solid #fff;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.profile{
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    width: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    column-gap: 5px;
+}
+
+.profile-pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+/* Nav bar ends */
+
+.notice-data{
+    font-size: 10px;
+    color: #adb5bd;
+    float: right;
+}
+
+
+
+/* Quick pickup  */
+.quick-pickup{
+    width: 100%;
+    height:197px;
+    margin-top: 30px;
+    background-image: url("../photos/quick-book-background.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 19px;
+    
+}
+
+.pickup-options{
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    font-size: 14px;
+    padding-left: 81px;
+    color: #fff;
+}
+
+.vehicle-type{
+    cursor: pointer;
+    background-color: #ffffff58;
+    color: #fff;
+    border: none;
+    padding: 3px;
+    border-radius: 15px;
+}
+
+option {
+    color: #000;
+    font-size: 12px;
+}
+
+
+
+.pickup-link{
+    all: unset;
+    color: #c0baba;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.pickup-link:focus{
+    color: #fff;
+}
+
+.pickup-link:focus .line{
+    display: block;
+}
+
+.line{
+    display: none;
+    width: 100%;
+    border-radius: 2px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.additional-details{
+    padding-left: 81px;
+    column-gap: 16px;
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    width: max-content;
+}
+
+.location, .pickup-time{
+    font-size: 12px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #fff;
+    height: 100%;
+    width: 188px;
+}
+
+
+
+.location select{
+    margin-right: 10px;
+}
+
+
+
+.map-pin{
+    padding: 15px;
+    color: #38b000;
+}
+.location-list{
+    background-color: transparent;
+    border: none;
+    outline: revert;
+    color:#000;
+    width: 100%;
+}
+.location img{
+    width: 9px;
+    height: 12px;
+}
+
+
+.pickup-time{
+    position: relative;
+    column-gap: 10px;
+}
+
+.calender-icon{
+    width: 10px;
+    height: 10px;
+}
+
+.date-time{
+    display: flex;
+    column-gap: 10px;
+}
+
+
+
+
+
+/* Hidden date-time picker container */
+
+.date-time-picker, .arrival-date-time-picker {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.date-time-picker input, .arrival-date-time-picker input {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.date-time-picker button, .arrival-date-time-picker button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+/* Hidden date-time picker container over */
+
+/* search button */
+.search-button{
+    height: 42px;
+    width: 64px;
+    background-color: #fff;
+    border-radius: 20px;
+    display: grid;
+    justify-content: center;
+}
+
+.search-button button,.quick-book button{
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    transition: color 0.4s;
+}
+
+
+/* vertical line */
+.vertical-line{
+    height: 42px;
+    width: 2px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+/* Quick book */
+
+.quick-book button{
+    border-radius: 20px;
+    width: 232px;
+    border: 2px solid #fff;
+    transition: background-color 0.4s;
+}
+
+.quick-book button:hover{
+    background-color: #fff;
+    color: #d00000;
+}
+
+/* download app section */
+.download-links{
+    padding-left: 81px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 19px;
+}
+
+.download-description{
+    font-size: 14px;
+    color: #fff;
+    font-weight: 200;
+}
+
+
+/* carousal styles */
+.carousel {
+    margin-top: 8px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+/* Carousel slides container */
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual slide */
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    height: 405px; /* Adjust as needed */
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Indicators (dots) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.carousel-indicators div {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-indicators .active {
+    background-color: #007BFF;
+}
+
+/* Text overlay */
+.carousel-caption {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.carousel-caption button{
+    width: 153px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 32px;
+    text-align: center;
+    background-color: #009046;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #fff;
+}
+
+.carousel-caption p {
+    font-size: 18px;
+    width: 443px;
+    color: white;
+}
+
+
+
+
+
+/* Cards section */
+.car-cards {
+    margin-top: 41px;
+    text-align: center;
+}
+
+.car-cards h2 {
+    font-size: 35px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.popular-cars {
+    
+    display: flex;
+    flex-direction: row;
+    column-gap: 22px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1440px;
+    position: relative;
+    height: 300px; /* Set a height to enable scrolling */
+}
+
+.card {
+    width: 754px;
+    height: 290px;
+    background-color: #fff;
+    flex-shrink: 0;
+    border: 1px solid #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+}
+
+.card img {
+    width: 360px;
+    height: 290px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+
+
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    pointer-events: auto; /* Enable pointer events */
+}
+
+.card-description{
+    margin-left: 40px;
+    margin-top: 25px;
+    margin-right: 40px;
+}
+
+.card-description h3{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.card-description p{
+    font-size: 12px;
+    text-align: left;
+}
+
+.rate-and-book{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 64px;
+}
+
+.rate-and-book h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rate-and-book button{
+    padding: 0;
+    width: 98px;
+    height: 37px;
+    background-color: #E21E26;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+
+.car-details{
+    display: flex;
+    flex-direction: row;
+    width:  300px;
+    column-gap: 20px;
+    font-size: 8px;
+}
+
+.car-details img{
+    width: 10px;
+    height: 15px;
+}
+
+.car-details div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 5px;
+    width: max-content;
+}
+
+.car-details div p{
+    margin: 0;
+    font-size: 11px;
+}
+
+
+
+
+/* Subscribe section */
+.subscribe{
+    margin-top: 40px;
+    margin-left: 82px;
+    display: flex;
+    flex-direction: row;
+}
+
+.offers-subscribe{
+    margin-top: 78px;
+    display: flex;
+    flex-direction: column;
+}
+
+.offers-subscribe h2{
+    width: 550px;
+    font-size: 34px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.subscribe-form{
+    margin-top: 41px;
+}
+
+.subscribe-form div{
+    display: flex;
+    flex-direction: row;
+}
+
+.name-email{
+    display: flex;
+    flex-direction: column;
+    column-gap: 18px;
+}
+
+.name-email input{
+    outline: none;
+    border: none;
+    width: 223px;
+    height: 45px;
+    padding: 5px;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+}
+
+.name input:focus .name label{
+    display: block;
+}
+
+.subscribe-para{
+    width: 478px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.subscribe-form button{
+    width: 478px;
+    height: 58px;
+    outline: none;
+    border: none;
+    background-color: #E21E26;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.app-downloadLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E21E26;
+    width: 100%;
+    height: 506px;
+}
+.app-downloadLink img{
+    margin: 48px;
+    width: 231px;
+    height: 417px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.link-share{
+    display: flex;
+    flex-direction: column;
+}
+
+.link-share p{
+    width: 233px;
+    height: 43px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.link-share input{
+    width: 263px;
+    height: 45px;
+    border-radius: 5px;
+    padding-left: 8px;
+    outline: none;
+    border: none;
+}
+
+.link-share button{
+    margin-top: 24px;
+    width: 144px;
+    height: 42px;
+    border: none;
+    outline: none;
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.playstore-appstore{
+    display: inline-flex;
+    column-gap: 8px;
+}
+
+.playstore-appstore p{
+    height: 21px;
+}
+.playstore-appstore img{
+    margin: 0;
+    width: 103px;
+    height: 30px;
+}
