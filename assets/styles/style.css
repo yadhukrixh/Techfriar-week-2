@@ -122,8 +122,76 @@ ul li{
 .notice-data{
     font-size: 10px;
     color: #adb5bd;
-    float: right;
+    float: right;   
 }
+
+
+/* slid in buttons */
+.slide-in-button-1{
+    position: absolute;
+    right: 0;
+    overflow-x: hidden;
+    top: 151px;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 20px 20px 0px;
+    margin-right: 5px;
+    border-radius: 20px 0px 0px 20px;
+    background: transparent;
+    transition: width 0.3s ease;
+    
+}
+
+.slide-in-button-1:hover{
+    width: 200px;
+}
+
+.slide-in-contents{
+    background-color: #fff;
+    height: 45px;
+    width: 200px;
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 20px;
+    flex-direction: row;
+    outline: none;
+    border: none;
+}
+
+.slide-in-contents img{
+    margin-left: 10px;
+    border-radius: 20px;
+    height: 25px;
+    width: 25px;
+}
+
+.slide-in-contents p{
+    margin: 0;
+}
+
+
+.slide-in-button-2{
+    position: absolute;
+    right: 0;
+    overflow-x: hidden;
+    top: 220px;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 20px 20px 0px;
+    margin-right: 5px;
+    border-radius: 20px 0px 0px 20px;
+    background: transparent;
+    transition: width 0.3s ease;
+}
+
+.slide-in-button-2:hover{
+    width: 200px;
+}
+
 
 
 
@@ -854,6 +922,7 @@ h2 {
 
 .faq-question span {
     font-size: 16px;
+    font-weight: 400;
 }
 
 .faq-toggle {

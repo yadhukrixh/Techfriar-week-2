@@ -474,3 +474,5 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function with the FAQ data
     addFaqItems(faqData);
 });
+
+//////////////////////////////////////////////////////////////////
