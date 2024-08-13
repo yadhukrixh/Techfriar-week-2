@@ -11,6 +11,7 @@ body{
     height: 100%;
     padding-left: 50px;
     padding-right: 50px;
+    overflow: visible;
 }
 
 a{
@@ -453,13 +454,11 @@ option {
 }
 
 .popular-cars {
-    
     display: flex;
     flex-direction: row;
     column-gap: 22px;
     overflow: hidden;
     width: 100%;
-    max-width: 1440px;
     position: relative;
     height: 300px; /* Set a height to enable scrolling */
 }
@@ -872,4 +871,169 @@ h2 {
 .faq-answer p {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+
+
+/* Footer section */
+
+.footer{
+    margin-top: 120px;
+    position: relative;
+    width: 100dvw;
+    min-height: fit-content;
+    max-height: 303px;
+    background-color: #000;
+    left: -60px;
+    right: -50px;
+    bottom: -50px;
+    overflow: hidden;
+}
+
+
+
+.footer-container {
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 40px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.footer-logo {
+    max-width: 200px;
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 57px;
+    height: 66px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p{
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+    width: 105px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 230px;
+}
+
+.footer-column {
+    margin: 0;
+}
+
+.footer-column ul {
+    display: grid;
+    grid-template-columns: repeat(4,120px);
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a ,.AlHabthoor-companyList ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.AlHabthoor-companyList{
+    height: 57px;
+}
+
+.AlHabthoor-companyList p{
+    font-size: 13px;
+    margin: 0;
+    color: #fff;
+}
+
+
+.AlHabthoor-companyList ul{
+    margin-top: 15px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    column-gap: 21px;
+}
+
+.AlHabthoor-companyList ul li{
+    font-size: 13px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    column-gap: 14px;
+}
+
+.social-media p{
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.social-media ul li {
+    margin: 0;
+}
+
+.social-media ul li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.social-media ul li a img {
+    width: 17px;
+    height: 17px;
+}
+
+.footer-certificates{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-certificates img {
+    width: 60px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #444;   
+}
+
+.footer-bottom p {
+    color: #fff;
+    
+    font-size: 14px;
 }
