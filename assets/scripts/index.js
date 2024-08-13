@@ -354,34 +354,39 @@ cardsData.forEach(data => {
     container.appendChild(card);
 });
 
+
+
+
+
+// these function replaced by webkit scroll bar
 // Scroll functionality
-let isDown = false;
-let cardScrollX, cardScrollLeft;
+// let isDown = false;
+// let cardScrollX, cardScrollLeft;
 
-container.addEventListener('mousedown', (e) => {
-    isDown = true;
-    cardScrollX = e.pageX - container.offsetLeft;
-    cardScrollLeft = container.scrollLeft;
-    container.style.cursor = 'grabbing';
-});
+// container.addEventListener('mousedown', (e) => {
+//     isDown = true;
+//     cardScrollX = e.pageX - container.offsetLeft;
+//     cardScrollLeft = container.scrollLeft;
+//     container.style.cursor = 'grabbing';
+// });
 
-container.addEventListener('mouseleave', () => {
-    isDown = false;
-    container.style.cursor = 'grab';
-});
+// container.addEventListener('mouseleave', () => {
+//     isDown = false;
+//     container.style.cursor = 'grab';
+// });
 
-container.addEventListener('mouseup', () => {
-    isDown = false;
-    container.style.cursor = 'grab';
-});
+// container.addEventListener('mouseup', () => {
+//     isDown = false;
+//     container.style.cursor = 'grab';
+// });
 
-container.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - cardScrollX) * 2; // Scroll speed adjustment
-    container.scrollLeft = cardScrollLeft - walk;
-});
+// container.addEventListener('mousemove', (e) => {
+//     if (!isDown) return;
+//     e.preventDefault();
+//     const x = e.pageX - container.offsetLeft;
+//     const walk = (x - cardScrollX) * 2; // Scroll speed adjustment
+//     container.scrollLeft = cardScrollLeft - walk;
+// });
 
 
 ////////////////////////////////////////////////////////////////////////////////
