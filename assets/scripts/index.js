@@ -2,7 +2,7 @@
 
 
 // To set notification count as dynamically
-let notificationCount = 10;
+let notificationCount = 1;
 document.getElementById('notification-count').innerHTML = notificationCount;
 
 //////////////////////////////////////////////////////////////////////////////
@@ -385,3 +385,92 @@ container.addEventListener('mousemove', (e) => {
 
 
 ////////////////////////////////////////////////////////////////////////////////
+
+
+// Dynamic Frequently asked Questions
+
+document.addEventListener("DOMContentLoaded", function() {
+    const faqContainer = document.querySelector(".faq-container");
+
+    // Sample data (You can fetch or generate this data dynamically)
+    const faqData = [
+        {
+            question: "What is my eligibility to book a car?",
+            answer: "You should be 18 years old above and you must possess a valid driving license."
+        },
+        {
+            question: "Can I book for any period of time?",
+            answer: "Yes, you can book a car for as long as you need."
+        },
+        {
+            question: "Can I opt for a longer period?",
+            answer: "Yes, longer booking periods are available with special rates."
+        },
+        {
+            question: "Can I book a one-way trip?",
+            answer: "One-way trips are available depending on the destination."
+        },
+        {
+            question: "Is there a home delivery option available?",
+            answer: "Yes, we offer home delivery services for car bookings."
+        },
+        {
+            question: "How can I make the payment?",
+            answer: "Payments can be made online via credit card, debit card, or other available options."
+        }
+    ];
+
+    // Function to create and append FAQ items
+    function addFaqItems(faqData) {
+        faqData.forEach(item => {
+            // Create elements for the FAQ item
+            const faqItem = document.createElement("div");
+            faqItem.classList.add("faq-item");
+
+            const faqQuestion = document.createElement("div");
+            faqQuestion.classList.add("faq-question");
+
+            const questionText = document.createElement("span");
+            questionText.textContent = item.question;
+
+            const faqToggle = document.createElement("span");
+            faqToggle.classList.add("faq-toggle");
+            faqToggle.textContent = "+";
+
+            const faqAnswer = document.createElement("div");
+            faqAnswer.classList.add("faq-answer");
+
+            const answerText = document.createElement("p");
+            answerText.textContent = item.answer;
+
+            // Append elements to the container
+            faqAnswer.appendChild(answerText);
+            faqQuestion.appendChild(questionText);
+            faqQuestion.appendChild(faqToggle);
+            faqItem.appendChild(faqQuestion);
+            faqItem.appendChild(faqAnswer);
+            faqContainer.appendChild(faqItem);
+
+            // Add toggle functionality
+            faqQuestion.addEventListener("click", function() {
+                const isOpen = faqAnswer.style.display === "block";
+
+                // Close all other answers
+                document.querySelectorAll(".faq-answer").forEach(answer => answer.style.display = "none");
+                document.querySelectorAll(".faq-toggle").forEach(toggle => toggle.textContent = "+");
+
+                // Toggle the current answer
+                if (isOpen) {
+                    faqAnswer.style.display = "none";
+                    faqToggle.textContent = "+";
+                } else {
+                    faqAnswer.style.display = "block";
+                    faqToggle.textContent = "×";
+                }
+            });
+        });
+    }
+
+    // Call the function with the FAQ data
+    addFaqItems(faqData);
+});

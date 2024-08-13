@@ -3,148 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Scroll</title>
+    <title>FAQ Section</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            user-select: none; /* Prevents text selection on the whole page */
-        }
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
 
-        .container {
-            display: flex;
-            overflow: hidden;
-            width: 90vw;
-            max-width: 1200px;
-            position: relative;
-        }
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .card {
-            min-width: 300px;
-            margin: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            cursor: grab;
-            user-select: none; /* Prevents text selection inside the card */
-        }
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
 
-        .card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 10px;
-            pointer-events: none; /* Prevents selection or dragging of the image */
-        }
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
 
-        .card h3 {
-            margin-top: 10px;
-            font-size: 18px;
-        }
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+}
 
-        .card p {
-            margin-top: 5px;
-            font-size: 14px;
-        }
+.faq-question span {
+    font-size: 16px;
+}
 
-        .button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            pointer-events: none; /* Prevents clicking during drag */
-        }
+.faq-toggle {
+    font-size: 20px;
+}
+
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
     </style>
 </head>
 <body>
-    <h1>Most Popular Cars</h1>
-    <div class="container" id="card-container">
-        <!-- cards dynamically add here -->
+    <div class="faq-container">
+        <h2>Frequently asked questions</h2>
+        <!-- FAQ items will be dynamically inserted here by JavaScript -->
     </div>
 
     <script>
-        const container = document.getElementById('card-container');
-        const cardsData = [
-            { title: 'Car 1', description: 'Description for Car 1', imgSrc: 'https://via.placeholder.com/300x150?text=Car+1' },
-            { title: 'Car 2', description: 'Description for Car 2', imgSrc: 'https://via.placeholder.com/300x150?text=Car+2' },
-            { title: 'Car 3', description: 'Description for Car 3', imgSrc: 'https://via.placeholder.com/300x150?text=Car+3' },
-            { title: 'Car 4', description: 'Description for Car 4', imgSrc: 'https://via.placeholder.com/300x150?text=Car+4' },
-            { title: 'Car 5', description: 'Description for Car 5', imgSrc: 'https://via.placeholder.com/300x150?text=Car+5' },
-        ];
+    document.addEventListener("DOMContentLoaded", function() {
+    const faqContainer = document.querySelector(".faq-container");
 
-        function createCard({ title, description, imgSrc }) {
-            const card = document.createElement('div');
-            card.className = 'card';
-
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.alt = title;
-
-            const h3 = document.createElement('h3');
-            h3.textContent = title;
-
-            const p = document.createElement('p');
-            p.textContent = description;
-
-            const button = document.createElement('button');
-            button.className = 'button';
-            button.textContent = 'Book Now';
-
-            card.appendChild(img);
-            card.appendChild(h3);
-            card.appendChild(p);
-            card.appendChild(button);
-
-            return card;
+    // Sample data (You can fetch or generate this data dynamically)
+    const faqData = [
+        {
+            question: "What is my eligibility to book a car?",
+            answer: "You should be 18 years old above and you must possess a valid driving license."
+        },
+        {
+            question: "Can I book for any period of time?",
+            answer: "Yes, you can book a car for as long as you need."
+        },
+        {
+            question: "Can I opt for a longer period?",
+            answer: "Yes, longer booking periods are available with special rates."
+        },
+        {
+            question: "Can I book a one-way trip?",
+            answer: "One-way trips are available depending on the destination."
+        },
+        {
+            question: "Is there a home delivery option available?",
+            answer: "Yes, we offer home delivery services for car bookings."
+        },
+        {
+            question: "How can I make the payment?",
+            answer: "Payments can be made online via credit card, debit card, or other available options."
         }
+    ];
 
-        cardsData.forEach(data => {
-            const card = createCard(data);
-            container.appendChild(card);
+    // Function to create and append FAQ items
+    function addFaqItems(faqData) {
+        faqData.forEach(item => {
+            // Create elements for the FAQ item
+            const faqItem = document.createElement("div");
+            faqItem.classList.add("faq-item");
+
+            const faqQuestion = document.createElement("div");
+            faqQuestion.classList.add("faq-question");
+
+            const questionText = document.createElement("span");
+            questionText.textContent = item.question;
+
+            const faqToggle = document.createElement("span");
+            faqToggle.classList.add("faq-toggle");
+            faqToggle.textContent = "+";
+
+            const faqAnswer = document.createElement("div");
+            faqAnswer.classList.add("faq-answer");
+
+            const answerText = document.createElement("p");
+            answerText.textContent = item.answer;
+
+            // Append elements to the container
+            faqAnswer.appendChild(answerText);
+            faqQuestion.appendChild(questionText);
+            faqQuestion.appendChild(faqToggle);
+            faqItem.appendChild(faqQuestion);
+            faqItem.appendChild(faqAnswer);
+            faqContainer.appendChild(faqItem);
+
+            // Add toggle functionality
+            faqQuestion.addEventListener("click", function() {
+                const isOpen = faqAnswer.style.display === "block";
+
+                // Close all other answers
+                document.querySelectorAll(".faq-answer").forEach(answer => answer.style.display = "none");
+                document.querySelectorAll(".faq-toggle").forEach(toggle => toggle.textContent = "+");
+
+                // Toggle the current answer
+                if (isOpen) {
+                    faqAnswer.style.display = "none";
+                    faqToggle.textContent = "+";
+                } else {
+                    faqAnswer.style.display = "block";
+                    faqToggle.textContent = "×";
+                }
+            });
         });
+    }
 
-        // Scroll functionality
-        let isDown = false;
-        let startX, scrollLeft;
+    // Call the function with the FAQ data
+    addFaqItems(faqData);
+});
 
-        container.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - container.offsetLeft;
-            scrollLeft = container.scrollLeft;
-            container.style.cursor = 'grabbing';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mouseup', () => {
-            isDown = false;
-            container.style.cursor = 'grab';
-        });
-
-        container.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - container.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll speed adjustment
-            container.scrollLeft = scrollLeft - walk;
-        });
     </script>
 </body>
 </html>
