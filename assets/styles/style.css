@@ -7,7 +7,6 @@
 
 body{
     margin: 10px;
-    max-width: 100dvw;
     height: 100%;
     padding-left: 50px;
     padding-right: 50px;
@@ -122,7 +121,7 @@ ul li{
 .notice-data{
     font-size: 10px;
     color: #adb5bd;
-    float: right;   
+    margin: 0; 
 }
 
 
@@ -541,7 +540,7 @@ option {
 }
 
 .card {
-    min-width: 754px; /* Use min-width instead of width */
+    width: 754px; /* Use min-width instead of width */
     height: 290px;
     background-color: #fff;
     border: 1px solid #D9D9D9;
@@ -1114,4 +1113,277 @@ h2 {
     color: #fff;
     
     font-size: 14px;
+}
+
+
+
+/* Media queries for mobile */
+@media(max-width : 800px){
+
+    body{
+        margin: 0  10px 0 10px;
+        padding: 0;
+        width: 110%;
+        overflow: hidden;
+    }
+
+    
+    /* social bar hided */
+    .social-links{
+        display: none;
+    }
+
+
+    /* nav bar hided */
+    .nav-options ul{
+        display: none;
+    }
+
+
+    /* logo width */
+    .logo{
+        display: flex;
+        flex-direction: row;
+        width: 100dvw;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    /* logo img  */
+    .logo-img{
+        width: 200px;
+    }
+
+    /* hamburger menu */
+    .nav-control{
+        display: flex !important;
+        width: 30px;
+        height: 30px;
+    }
+
+    /* hero section width */
+    .hero{
+        width: 100%;
+    }
+
+    .slide-in-button-1,.slide-in-button-2{
+        left: calc(100dvw);
+        z-index: 20;
+        transition: width 0.4s ease, left 0.4s ease;
+    }
+
+    .slide-in-button-1:hover ,.slide-in-button-2:hover{
+        width: 400px;
+        left: 150px;
+    }
+
+    /* section with red back ground */
+    .quick-pickup{
+        width: 100%;
+        height: 120px;
+    }
+    
+    /* Hided pickup 0ptions for now */
+    .pickup-options,.additional-details{
+        display: none;
+    }
+
+    /* download links */
+    .download-links{
+        font-size: 13px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* booking buttons for mobile */
+    .booking-buttons-for-mobile{
+        margin: 16px 0 16px 0;
+        width: 100%;
+        justify-content: center;
+        display: flex !important;
+        column-gap: 8px;
+
+    }
+
+    
+
+    /* Book car buttons  */
+    .booking-buttons-for-mobile button,  .search-vehicle{
+        background-color: #fff;
+        border: 2px solid #E21E26;
+        font-size: 13px;
+        font-weight: 500;
+        border-radius: 4px;
+        color: #E21E26;
+        outline: none;
+        width: 160px;
+        height: 38px;
+    }
+
+    .search-vehicle{
+        background-color: #E21E26;
+        color: #fff;
+    }
+
+    .booking-buttons-for-mobile .book-a-car-active{
+        background-color: #E21E26;
+        color: #fff;
+    }
+    
+    /* pickup options for mobile */
+    .mobile-pickup-options{
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 10px;
+    }
+
+    /* primary details of pickup */
+    .primary-pickup-details{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .primary-pickup-details span{
+        font-size: 12px;
+        color: #4946468c;
+    }
+
+    /* pickup location preference  */
+    .pickup-location-active{
+        color: #000 !important;
+        border-bottom: 2px solid #000;
+    }
+
+    /* vehicle selector */
+    .vehicle-type{
+        font-size: 12px;
+        color: #000;
+        outline: none;
+    }
+
+    /* location selector an date picker */
+    .location, .pickup-time{
+        width: 100% !important;
+        background-color: #F6F7F9;
+        border-radius: 8px;
+    }
+
+    .pickup-time{
+        height: 42px;
+        font-size: 13px;
+        justify-content: flex-start;
+    }
+
+    .pickup-time .icon{
+        width: 20px;
+        height: 20px;
+        margin-left: 11px;
+    }
+
+
+    /* carouasal cards section */
+    .carousel-inner, .carousel-item{
+        height: 216px;
+        justify-content: center;
+    }
+    
+    /* carousal caption */
+    .carousel-caption{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    /* description on the carousal */
+    .carousel-caption p{
+        margin: 0;
+        width: 80%;
+        font-size: 10px;
+        align-items: flex-start;
+    }
+
+    /* button on the carousal  */
+    .carousel-caption button{
+        border-radius: 0;
+        height: 16px;
+        font-size: 10px;
+        width: max-content;
+    }
+
+    /* cars slider section */
+    .popular-cars{
+        height: 100%;
+    }
+
+    /* each card about cars  */
+    .popular-cars .card{
+        flex-direction: column;
+        width: 207px;
+        height: 470px;
+    }
+
+    /* card photos  */
+    .car-photo{
+        width: 100% !important;
+        height: 127px !important;
+    }
+
+    /* about the car */
+    .card-description{
+        width: 188px;
+        text-align: justify;
+    }
+
+    .card-description h3{
+        font-size: 16px;
+    }
+
+    .card-description p{
+        font-size: 12px;
+        overflow-x: hidden;
+        height: 70px;
+        overflow-y: hidden;
+    }
+
+    /* details aboyt cars */
+    .car-details{
+        column-gap: 5px;
+        width: 190px;
+        overflow-x: hidden;
+    }
+    .car-details p{
+        width: max-content;
+        height: 17px;
+    }
+
+    .rate-and-book{
+        flex-direction: column;
+    }
+
+
+    /* subscribe section */
+    .subscribe{
+        width: 100%;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .offers-subscribe{
+        margin-top:20px;
+    }
+
+    
+
 }

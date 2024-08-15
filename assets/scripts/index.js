@@ -45,7 +45,7 @@ window.onload = function() {
     selectedArrivalDate.textContent = formatDate(now);
     selectedArrivalTime.textContent = formatTime(now);
 };
-
+// time picker active while click
 dateTimeSelector.addEventListener('click', () => {
     dateTimePicker.style.display = dateTimePicker.style.display === 'none' ? 'block' : 'none';
 });
@@ -281,6 +281,7 @@ function createCard({ title, description, imgUrl, rate,seatNum,shiftType,doors, 
     card.className = 'card';
 
     const img = document.createElement('img');
+    img.className = 'car-photo';
     img.src = imgUrl;
     img.alt = title;
 
@@ -288,34 +289,34 @@ function createCard({ title, description, imgUrl, rate,seatNum,shiftType,doors, 
     cardDescription.className = 'card-description';//class name = car-description
 
     const h3 = document.createElement('h3');
-    h3.textContent = title;
+    h3.textContent = title;// car name
 
     const p = document.createElement('p');
-    p.textContent = description;
+    p.textContent = description;// car description
 
     const  carDetails = document.createElement('div');
     carDetails.className = 'car-details';//class name = car-details
 
     const seatNumbers = document.createElement('div');
-    seatNumbers.innerHTML = `<img src='./assets/photos/icons/seat.svg'><p>${seatNum} People</p>`;
+    seatNumbers.innerHTML = `<img src='./assets/photos/icons/seat.svg'><p>${seatNum} People</p>`;//seat number
 
     const gearType = document.createElement('div');
-    gearType.innerHTML = `<img src='./assets/photos/icons/gear.svg' style='width:9px'><p>${shiftType}</p>`;
+    gearType.innerHTML = `<img src='./assets/photos/icons/gear.svg' style='width:9px'><p>${shiftType}</p>`;// gear type
 
 
     const doorNumbers = document.createElement('div');
-    doorNumbers.innerHTML = `<img src='./assets/photos/icons/door.svg'><p>${doors} Doors</p>`;
+    doorNumbers.innerHTML = `<img src='./assets/photos/icons/door.svg'><p>${doors} Doors</p>`;// number of doors
     
 
     const acType = document.createElement('div');
-    acType.innerHTML = `<img src='./assets/photos/icons/ac.svg'><p>${isAc}</p>`;
+    acType.innerHTML = `<img src='./assets/photos/icons/ac.svg'><p>${isAc}</p>`;// ac avialability
 
 
     const rateAndBook = document.createElement('div');
     rateAndBook.className = 'rate-and-book';//class name = rate-and-book
 
     const h2 = document.createElement('h2');
-    h2.textContent = rate;
+    h2.textContent = rate;// car's rent rate
 
     const button = document.createElement('button');
     button.className = 'book-button';//class name = book-button
@@ -340,53 +341,21 @@ function createCard({ title, description, imgUrl, rate,seatNum,shiftType,doors, 
     return card;
 }
 
+// taking eack data for card to pass in to function
 cardsData.forEach(data => {
     const card = createCard({
-        title: data.caption.title,
-        description: data.caption.description,
-        imgUrl: data.imgUrl,
-        rate: data.caption.rate,
-        seatNum: data.caption.seatNum,
-        shiftType: data.caption.shiftType,
-        doors: data.caption.doors,
-        isAc: data.caption.isAc
+        title: data.caption.title,//car name
+        description: data.caption.description,// car description
+        imgUrl: data.imgUrl,// image url
+        rate: data.caption.rate,// rent rate
+        seatNum: data.caption.seatNum,// number of seats
+        shiftType: data.caption.shiftType,// gear type
+        doors: data.caption.doors,// number of doors
+        isAc: data.caption.isAc// ac avialability
     });
     container.appendChild(card);
 });
 
-
-
-
-
-// these function replaced by webkit scroll bar
-// Scroll functionality
-// let isDown = false;
-// let cardScrollX, cardScrollLeft;
-
-// container.addEventListener('mousedown', (e) => {
-//     isDown = true;
-//     cardScrollX = e.pageX - container.offsetLeft;
-//     cardScrollLeft = container.scrollLeft;
-//     container.style.cursor = 'grabbing';
-// });
-
-// container.addEventListener('mouseleave', () => {
-//     isDown = false;
-//     container.style.cursor = 'grab';
-// });
-
-// container.addEventListener('mouseup', () => {
-//     isDown = false;
-//     container.style.cursor = 'grab';
-// });
-
-// container.addEventListener('mousemove', (e) => {
-//     if (!isDown) return;
-//     e.preventDefault();
-//     const x = e.pageX - container.offsetLeft;
-//     const walk = (x - cardScrollX) * 2; // Scroll speed adjustment
-//     container.scrollLeft = cardScrollLeft - walk;
-// });
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -432,19 +401,24 @@ document.addEventListener("DOMContentLoaded", function() {
             const faqItem = document.createElement("div");
             faqItem.classList.add("faq-item");
 
+            // create an element for question class
             const faqQuestion = document.createElement("div");
             faqQuestion.classList.add("faq-question");
 
+            // create and add question
             const questionText = document.createElement("span");
             questionText.textContent = item.question;
 
+            // collapse button
             const faqToggle = document.createElement("span");
             faqToggle.classList.add("faq-toggle");
             faqToggle.textContent = "+";
 
+            // answer section
             const faqAnswer = document.createElement("div");
             faqAnswer.classList.add("faq-answer");
 
+            // answer content
             const answerText = document.createElement("p");
             answerText.textContent = item.answer;
 
@@ -481,3 +455,32 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //////////////////////////////////////////////////////////////////
+
+// book a car -block display while click on button
+document.getElementById('book-a-car').addEventListener("click",() => {
+    document.getElementById('book-a-car').classList.toggle('book-a-car-active');
+    document.querySelector('.book-a-car-active')?document.getElementById('mobile-pickup-options').style.display = 'flex':document.getElementById('mobile-pickup-options').style.display = 'none';
+    
+});
+
+//////////////////////////////////////////////////////////////////////////////
+
+// to change drop location selection
+const sameAsPickup = document.getElementById('same-as-pickup');
+const differentPickup = document.getElementById('different-pickup');
+
+// event listner on same as pick up, it will hide drop off location selection
+sameAsPickup.addEventListener('click',() => {
+    sameAsPickup.classList.add('pickup-location-active');
+    differentPickup.classList.remove('pickup-location-active');
+    document.getElementById('drop-off-location').style.display = "none";
+})
+
+
+// event listner on different pick up, it will show drop off location selection
+differentPickup.addEventListener('click',() => {
+    differentPickup.classList.add('pickup-location-active');
+    sameAsPickup.classList.remove('pickup-location-active');
+    document.getElementById('drop-off-location').style.display = "flex";
+})
+

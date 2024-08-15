@@ -20,7 +20,7 @@
 
     <!-- nav bar -->
     <nav>
-        <div class="logo"><img src="./assets/photos/logo.svg" alt=""></div>
+        <div class="logo"><img src="./assets/photos/logo.svg" alt="" class="logo-img"><img src="./assets/photos/icons/hamburger.svg" style="display: none;" class="nav-control" id="nav-control" alt=""></div>
         <div class="nav-options">
             <ul>
                 <a href=""><li>About</li></a>
@@ -34,9 +34,9 @@
             </ul>
         </div>
     </nav>
-    <div class="notice-data">
-        <p> Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply | Follow us on Social Media for New Offers</p>
-    </div>
+    <marquee behavior="" direction="left">
+        <p class="notice-data"> Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply | Follow us on Social Media for New Offers</p>
+    </marquee>
 
     <!-- Slide in call button -->
     <div class="slide-in-button-1" id="slide-in-button">
@@ -127,20 +127,88 @@
                 
             </div>
 
+
+            <!-- play store and app store links for app download -->
             <div class="download-links">
                 <p class="download-description">
                     Download our App for easy accessibility anytime, anywhere!
                 </p>
-
-                <a href="">
-                    <img src="./assets/photos/icons/appstore.svg" alt="">
-                </a>
-                <a href="">
-                    <img src="./assets/photos/icons/playstore.svg" alt="">
-                </a>
+                <div>
+                    <a href="">
+                        <img src="./assets/photos/icons/appstore.svg" alt="">
+                    </a>
+                    <a href="">
+                        <img src="./assets/photos/icons/playstore.svg" alt="">
+                    </a>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- booking buttons for mobile hided by default -->
+    <div class="booking-buttons-for-mobile" style="display: none;">
+        <button id="book-a-car">Book a car</button>
+        <button id="quick-book">Quick book</button>
+    </div>
+
+
+    <!-- Pickup options for mobile  -->
+    <div class="mobile-pickup-options" style="display: none;" id="mobile-pickup-options">
+        <div class="primary-pickup-details">
+            <span  id="same-as-pickup">Same as pickup</span>
+            <span class="pickup-location-active" id="different-pickup">Different Pickup</span>
+            <select name="vehicle" id="" class="vehicle-type">
+                <option value="" disabled selected style="display: none;" >Select vehicle type</option>
+                <option value="sedan">Sedan</option>
+                <option value="coupe">Coupe</option>
+                <option value="suv">SUV</option>
+            </select>
+        </div>
+        <!-- pickup location selector -->
+        <div class="location">
+            <img src="./assets/photos/icons/map-logo.svg" alt="" class="map-pin"></i>
+            <select name="place" id="" class="location-list">
+                <option value="" disabled selected>Pick-up location</option>
+                <option value="al-quoz">Al Quoz</option>
+                <option value="al-barsha"><i class="ri-map-pin-line"></i>Al Barsha</option>
+                <option value="al-satwa"><i class="ri-map-pin-line"></i>Al Satwa</option>
+            </select>
+        </div>
+
+        <!-- drop off location selector -->
+        <div class="location" id="drop-off-location">
+            <img src="./assets/photos/icons/map-logo.svg" alt="" class="map-pin"></i>
+            <select name="place" id="" class="location-list">
+                <option value="" disabled selected>Drop off location</option>
+                <option value="al-quoz">Al Quoz</option>
+                <option value="al-barsha"><i class="ri-map-pin-line"></i>Al Barsha</option>
+                <option value="al-satwa"><i class="ri-map-pin-line"></i>Al Satwa</option>
+            </select>
+        </div>
+
+        <!-- pickup time -->
+        <div class="pickup-time">
+            <div class="icon">
+                <img src="./assets/photos/icons/calender.svg" alt="Calendar Icon" class="calender-icon">
+            </div>
+            <div class="date-time">
+                <span class="date" id="selectedDate">Pick-up Date & Time</span>
+            </div>
+        </div>
+
+        <!-- Arrival time -->
+        <div class="pickup-time">
+            <div class="icon">
+                <img src="./assets/photos/icons/calender.svg" alt="Calendar Icon" class="calender-icon">
+            </div>
+            <div class="date-time">
+                <span class="date" id="selectedArrivalDate">Drop off Time & Date</span>
+            </div>
+        </div>
+
+        <button class="search-vehicle">Search</button>
+
+    </div>
 
 
     <!-- Carousel section -->
@@ -374,6 +442,6 @@
 
 
 
-    <script src="./assets/scripts/index.js"></script>
+    <script src="./assets/scripts/index.js" defer></script>
 </body>
 </html>
