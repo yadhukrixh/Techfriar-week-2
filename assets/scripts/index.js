@@ -484,3 +484,19 @@ differentPickup.addEventListener('click',() => {
     document.getElementById('drop-off-location').style.display = "flex";
 })
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+document.getElementById('nav-control').addEventListener('click', () => { // to open navigation menu on mobile
+    document.getElementById('navigation-menu').classList.add('nav-active');
+})
+
+
+document.getElementById('navigation-close-button').addEventListener('click', () => { // to close navigation menu on mobile
+    document.getElementById('navigation-menu').classList.remove('nav-active');
+})

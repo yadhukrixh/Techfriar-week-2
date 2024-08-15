@@ -1118,14 +1118,79 @@ h2 {
 
 
 /* Media queries for mobile */
-@media(max-width : 800px){
+@media(max-width : 500px){
 
     body{
-        margin: 0  10px 0 10px;
-        padding: 0;
+        padding: 0px 10px 0px 10px;
+        margin: 0;
         width: 110%;
-        overflow: hidden;
+        overflow-x: hidden;
     }
+
+
+    /* Navigation menu for  mobile */
+    .nav-active{
+        z-index: 30;
+        color: #000;
+        display: flex !important;
+        flex-direction: column;
+        width: 350px;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 800px;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .close-btn {
+        float: left;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        background-color: #000;
+        border: none;
+        border-radius: 30px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        cursor: pointer;
+        right: 10px;
+        position: absolute;
+    }
+    
+    .menu-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        padding: 0;
+        font-size: 14px;
+        margin-top: 20px;
+        font-weight: 600;
+    }
+    
+    .menu-list li {
+        padding: 15px 0;
+        border-bottom: 1px solid #eaeaea;
+        cursor: pointer;
+    }
+    
+    .login-btn {
+        background-color: black;
+        color: white;
+        padding: 15px;
+        width: 200px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+    }
+    
 
     
     /* social bar hided */
@@ -1168,7 +1233,7 @@ h2 {
     }
 
     .slide-in-button-1,.slide-in-button-2{
-        left: calc(100dvw);
+        left: calc(102dvw);
         z-index: 20;
         transition: width 0.4s ease, left 0.4s ease;
     }
@@ -1327,6 +1392,12 @@ h2 {
         height: 100%;
     }
 
+    .car-cards h2{
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
     /* each card about cars  */
     .popular-cars .card{
         flex-direction: column;
@@ -1380,8 +1451,187 @@ h2 {
         flex-direction: column;
     }
 
+    /* main div of subscribe section */
     .offers-subscribe{
         margin-top:20px;
+    }
+
+    /* heading of section */
+    .offers-subscribe h2{
+        font-size: 16px;
+        text-align: left;
+        width: 227px;
+        font-weight: 500;
+    }
+
+    /* the form for email and name */
+    .name-email{
+        width: 100%;
+        flex-direction: column !important;
+        row-gap: 8px;
+    }
+
+    /* input for the subscribe form */
+    .name-email input{
+        width: 328px;
+    }
+
+    /* paragraph in the form */
+    .subscribe-para{
+        font-size: 12px;
+        width: 328px;
+    }
+
+    /* button for form submission */
+    .subscribe-form button{
+        width: 128px;
+        height: 38px;
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    /* Android app advertisement */
+    .app-downloadLink{
+        align-items: flex-start;
+        height: 390px;
+    }
+
+    /* Mobile phone image */
+    .app-downloadLink img{
+        margin: 0;
+        width: 136px;
+        height: 245px;
+    }
+
+    /* link share through phone number  */
+    .link-share{
+        flex-direction: column-reverse;
+        position: relative;
+    }
+
+    /* small contents on there  */
+    .link-share div p{
+        font-size: 12px;
+        width: 143px;
+
+    }
+
+    /* mobile number input */
+    .link-share input {
+        width: 180px;
+    }
+
+    /* play store and app store liage */
+    .playstore-appstore{
+        flex-direction: column;
+    }
+
+    .playstore-appstore p{
+        margin-top: 20px;
+    }
+
+    .playstore-appstore img{
+        height: 30px;
+        width: 100px;
+    }
+
+    /* Rental steps section */
+
+    .rental-steps h2{
+        font-size: 16px;
+        text-align: left;
+        font-weight: 500;
+    }
+
+    /* three steps align direction */
+    .three-steps{
+        flex-direction: column;
+    }
+
+    /* id for the each block */
+    .step-id{
+        font-size: 28px;
+    }
+
+    /* each step block containing info */
+    .step-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 167px;
+    }
+
+    .step-block p{
+        font-size: 13px;
+        width: 210px;
+    }
+
+    /* Avialable locations */
+    .avialable-locations{
+        align-items: flex-start;
+        height: 200px;
+        width: 100%;
+    }
+
+    /* section main heading  */
+    .avialable-locations h2{
+        margin:20px 0 0 20px;
+        text-align: left;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* location charts */
+    .our-locations{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2,100px);
+        column-gap: 30px;
+        row-gap: 20px;
+    }
+
+    /* hide vertical line betweens locations */
+    .vertical-line{
+        display: none;
+    }
+
+
+    /* loaction pin image  */
+    .each-location img{
+        width: 14px;
+        height: 17px;
+    }
+
+    /* location names */
+    .each-location p{
+        margin: 0;
+        font-size: 14px;
+    }
+
+
+    /* frequently asked questions and answers */
+    .FAQ{
+        padding: 0 10px 0 10px;
+    }
+
+    .faq-container h2{
+        margin: 0 5px 0 5px;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    .faq-question{
+        font-size: 13px;
+    }
+
+    .faq-answer{
+        font-size: 12px;
+        padding: 5px 0 5px 0;
+    }
+
+    .footer{
+        display: none;
     }
 
     

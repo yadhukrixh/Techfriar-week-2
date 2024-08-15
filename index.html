@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <title>Diamondlease car rental</title>
 </head>
-<body>
+<body id="body">
 
     <!-- top bar social links -->
     <div class="social-links">
@@ -34,6 +34,24 @@
             </ul>
         </div>
     </nav>
+
+
+    <!-- navigation bar for mobile hide by default -->
+    <div class="navigation-menu" id="navigation-menu" style="display: none;">
+        <button class="close-btn" id="navigation-close-button">&times;</button>
+        <ul class="menu-list">
+            <li>About Us</li>
+            <li>Offers</li>
+            <li>Corporate</li>
+            <li>Personal</li>
+            <li>Locations</li>
+            <li>Contact us</li>
+        </ul>
+        <button class="login-btn">Log In/Sign Up</button>
+    </div>
+
+
+    
     <marquee behavior="" direction="left">
         <p class="notice-data"> Sunday Pick Up/Drop-Off only at Dubai Silicon Oasis & Habtoor Grand Sales Counters | All Rates inclusive of VAT. T&C’s apply | Follow us on Social Media for New Offers</p>
     </marquee>
@@ -253,16 +271,20 @@
         <div class="app-downloadLink">
             <img src="./assets/photos/mobile-app.svg" alt="">
             <div class="link-share">
-                <p>Enter your number and receive a direct link to download the app</p>
-                <input type="number" placeholder="Enter Phone Number">
-                <button>Get the link</button>
-                <p style="margin-top: 45px;">
-                    Get in on
-                </p>
+                <div style="display: flex; flex-direction: column;">
+                    <p>Enter your number and receive a direct link to download the app</p>
+                    <input type="number" placeholder="Enter Phone Number">
+                    <button>Get the link</button>
+                </div>
+                <div>
+                    <p style="margin-top: 45px;">
+                        Get in on
+                    </p>
 
-                <div class="playstore-appstore">
-                    <a href=""><img src="./assets/photos/icons/appstoreTransparent.svg" alt=""></a>
-                    <a href=""><img src="./assets/photos/icons/playstoreTransparent.svg" alt=""></a>
+                    <div class="playstore-appstore">
+                        <a href=""><img src="./assets/photos/icons/appstoreTransparent.svg" alt=""></a>
+                        <a href=""><img src="./assets/photos/icons/playstoreTransparent.svg" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
