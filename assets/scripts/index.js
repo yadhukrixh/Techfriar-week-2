@@ -202,7 +202,10 @@ setInterval(nextSlide, 5000);
 
 // Initial display
 showSlide(0);
-////////////////////////////////////////////////////////////////////////////
+
+/**
+ * 
+ */
 
 
 // Dynamic popular cars

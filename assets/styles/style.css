@@ -1180,19 +1180,22 @@ h2 {
         flex-direction: column;
         list-style-type: none;
         padding: 0;
-        font-size: 14px;
         margin-top: 20px;
         font-weight: 600;
     }
     
     .menu-list li {
+        margin-left: 20px;
         padding: 15px 0;
         border-bottom: 1px solid #eaeaea;
         cursor: pointer;
+        width: 100%;
+        font-size: 20px !important;
     }
     
     .login-btn {
         background-color: black;
+        margin-left: 20px;
         color: white;
         padding: 15px;
         width: 200px;
