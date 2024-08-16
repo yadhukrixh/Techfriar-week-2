@@ -31,9 +31,12 @@ a{
 }
 
 .logo{
-    
-    width: 370px;
+    width: 100%;
     height: 54px;
+}
+
+.logo-img{
+    width: calc(25dvw);
 }
 
 
@@ -50,15 +53,24 @@ ul{
     list-style: none;
     display: flex;
     flex-direction: row;
-    column-gap: 32px;
+    column-gap: calc(2.1dvw);
     padding: 0;
+}
+
+ul .messages-li{
+    width: 20px;
 }
 
 ul li{
     height: 23px;
+    width: calc(5.54dvw);
     margin: 0;
     padding: 0;
-    font-size: 15px;
+    font-size: calc(0.9dvw);
+}
+
+ul li a{
+    max-width: fit-content;
 }
 
 .messages,.profile{
@@ -69,6 +81,7 @@ ul li{
 
 .messages{
     position: relative;
+    max-width: fit-content !important;
 }
 
 .bell{
@@ -94,9 +107,9 @@ ul li{
 .profile{
     background-color: #000;
     color: #fff;
-    font-size: 14px;
+    font-size: calc(1dvw);
     text-align: center;
-    width: 114px;
+    width: calc(7.9dvw);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,14 +227,15 @@ ul li{
     display: flex;
     flex-direction: row;
     column-gap: 20px;
-    font-size: 14px;
+    font-size: calc(1dvw);
     padding-left: 81px;
     color: #fff;
 }
 
 .vehicle-type{
     cursor: pointer;
-    background-color: #ffffff58;
+    font-size: calc(1dvw);
+    background-color: #ffffff33;
     color: #fff;
     border: none;
     padding: 3px;
@@ -260,8 +274,8 @@ option {
 }
 
 .additional-details{
-    padding-left: 81px;
-    column-gap: 16px;
+    padding-left: calc(5.6dvw);
+    column-gap: calc(1dvw);
     display: flex;
     flex-direction: row;
     height: 42px;
@@ -269,8 +283,7 @@ option {
 }
 
 .location, .pickup-time{
-    font-size: 12px;
-
+    font-size: calc(.83dvw);
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -279,7 +292,7 @@ option {
     border-radius: 20px;
     background-color: #fff;
     height: 100%;
-    width: 188px;
+    width: calc(13dvw);
 }
 
 
@@ -362,7 +375,7 @@ option {
 /* search button */
 .search-button{
     height: 42px;
-    width: 64px;
+    width: calc(4.4dvw);
     background-color: #fff;
     border-radius: 20px;
     display: grid;
@@ -396,7 +409,7 @@ option {
 
 .quick-book button{
     border-radius: 20px;
-    width: 232px;
+    width: calc(16dvw);
     border: 2px solid #fff;
     transition: background-color 0.4s;
 }
@@ -412,7 +425,7 @@ option {
     display: flex;
     flex-direction: row;
     align-items: center;
-    column-gap: 19px;
+    column-gap: calc(1dvw);
 }
 
 .download-description{
@@ -513,7 +526,7 @@ option {
 }
 
 .car-cards h2 {
-    font-size: 35px;
+    font-size: calc(2.43dvw);
     font-weight: 300;
     display: flex;
     flex-direction: column;
@@ -528,7 +541,7 @@ option {
     column-gap: 22px;
     width: 100%; /* Make sure this width is fixed or relative to the viewport */
     position: relative;
-    height: 300px;
+    height: 100%;
     overflow-x: auto; /* Ensure 'auto' to trigger scrolling when needed */
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; /* For momentum scrolling on iOS */
@@ -540,8 +553,8 @@ option {
 }
 
 .card {
-    width: 754px; /* Use min-width instead of width */
-    height: 290px;
+    width: calc(51.72dvw); /* Use min-width instead of width */
+    height: calc(20.1dvw);
     background-color: #fff;
     border: 1px solid #D9D9D9;
     display: flex;
@@ -553,38 +566,29 @@ option {
 
 
 .card img {
-    width: 360px;
-    height: 290px;
+    width: calc(25dvw);
+    height:calc(20.1dvw);
     object-fit: cover;
     pointer-events: none;
 }
 
 
 
-.button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    pointer-events: auto; /* Enable pointer events */
-}
+
 
 .card-description{
-    margin-left: 40px;
-    margin-top: 25px;
-    margin-right: 40px;
+    margin-left:calc(2.7dvw);
+    margin-top: 0;
+    margin-right: calc(2.7dvw);
 }
 
 .card-description h3{
-    font-size: 28px;
+    font-size: calc(1.93dvw);
     font-weight: 500;
 }
 
 .card-description p{
-    font-size: 12px;
+    font-size: calc(0.83dvw);
     text-align: left;
 }
 
@@ -594,18 +598,19 @@ option {
     align-items: center;
     flex-direction: row;
     width: 100%;
-    column-gap: 64px;
+    column-gap: calc(4.44dvw);
 }
 
 .rate-and-book h2{
-    font-size: 14px;
+    font-size: calc(0.97dvw);
     font-weight: 600;
 }
 
 .rate-and-book button{
     padding: 0;
-    width: 98px;
-    height: 37px;
+    width: 60px;
+    font-size: 11px;
+    height: 25px;
     background-color: #E21E26;
     border: none;
     border-radius: 4px;
@@ -616,9 +621,10 @@ option {
 .car-details{
     display: flex;
     flex-direction: row;
-    width:  300px;
-    column-gap: 20px;
-    font-size: 8px;
+    width:  calc(20dvw);
+    column-gap: calc(1.38dvw);
+    font-size: 6px;
+    overflow-x: hidden;
 }
 
 .car-details img{
@@ -644,27 +650,29 @@ option {
 
 /* Subscribe section */
 .subscribe{
-    margin-top: 40px;
-    margin-left: 82px;
+    margin-top: calc(2.77dvw);
+    margin-left: calc(2dvw);
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .offers-subscribe{
-    margin-top: 78px;
+    margin-left: calc(7dvw);
+    margin-top: calc(5.41dvw);
     display: flex;
     flex-direction: column;
 }
 
 .offers-subscribe h2{
-    width: 550px;
-    font-size: 34px;
+    width: calc(38.19dvw);
+    font-size: calc(2.36dvw);
     font-weight: 300;
     margin: 0;
 }
 
 .subscribe-form{
-    margin-top: 41px;
+    margin-top: calc(2.84dvw);
 }
 
 .subscribe-form div{
@@ -675,14 +683,14 @@ option {
 .name-email{
     display: flex;
     flex-direction: column;
-    column-gap: 18px;
+    column-gap: calc(1.25dvw);
 }
 
 .name-email input{
     outline: none;
     border: none;
-    width: 223px;
-    height: 45px;
+    width: calc(15.48dvw);
+    height: calc(3.125dvw);
     padding: 5px;
     background-color: #F8F8F8;
     border-radius: 5px;
@@ -693,21 +701,21 @@ option {
 }
 
 .subscribe-para{
-    width: 478px;
-    height: 42px;
-    font-size: 14px;
+    width: calc(33.194dvw);
+    height: calc(2.91dvw);
+    font-size: calc(0.97dvw);
     font-weight: 300;
 }
 
 .subscribe-form button{
-    width: 478px;
-    height: 58px;
+    width: calc(33.19dvw);
+    height: calc(4.07dvw);
     outline: none;
     border: none;
     background-color: #E21E26;
     border-radius: 5px;
     color: #fff;
-    font-size: 16px;
+    font-size: calc(1.12dvw);
     font-weight: 400;
 }
 
@@ -717,12 +725,12 @@ option {
     align-items: center;
     background-color: #E21E26;
     width: 100%;
-    height: 506px;
+    height: calc(35.13dvw);
 }
 .app-downloadLink img{
-    margin: 48px;
-    width: 231px;
-    height: 417px;
+    margin: calc(3.33dvw);
+    width: calc(16.04dvw);
+    height: calc(28.95);
 }
 
 input::-webkit-outer-spin-button,
@@ -742,16 +750,17 @@ input[type=number] {
 }
 
 .link-share p{
-    width: 233px;
-    height: 43px;
+    width: calc(16.18dvw);
+    height: calc(2.98dvw);
     color: #fff;
-    font-size: 14px;
+    font-size: calc(0.97dvw);
     font-weight: 400;
 }
 
 .link-share input{
-    width: 263px;
-    height: 45px;
+    width: calc(16dvw);
+    font-size: 8px;
+    height: calc(3.125dvw);
     border-radius: 5px;
     padding-left: 8px;
     outline: none;
@@ -759,9 +768,9 @@ input[type=number] {
 }
 
 .link-share button{
-    margin-top: 24px;
-    width: 144px;
-    height: 42px;
+    margin-top: calc(1.66dvw);
+    width: calc(10dvw);
+    height: calc(2.91dvw);
     border: none;
     outline: none;
     background-color: #000;
@@ -771,7 +780,7 @@ input[type=number] {
 
 .playstore-appstore{
     display: inline-flex;
-    column-gap: 8px;
+    column-gap: calc(0.5dvw);
 }
 
 .playstore-appstore p{
@@ -779,8 +788,8 @@ input[type=number] {
 }
 .playstore-appstore img{
     margin: 0;
-    width: 103px;
-    height: 30px;
+    width: calc(7.152dvw);
+    height: calc(2.08dvw);
 }
 
 
@@ -788,20 +797,20 @@ input[type=number] {
 
 /* Section rental steps */
 .rental-steps{
-    margin-top: 40px;
+    margin-top: calc(2.77dvw);
     padding: 0;
     text-align: center;
 }
 
 .rental-steps h2{
-    font-size: 34px;
+    font-size: calc(2.36dvw);
     font-weight: 400;
 }
 
 .three-steps{
     display: flex;
     flex-direction: row;
-    column-gap: 50px;
+    column-gap: calc(3.47dvw);
     justify-content: center;
 }
 
@@ -812,32 +821,37 @@ input[type=number] {
 }
 
 .step-id{
-    width: 64px;
-    height: 52px;
+    width: calc(4.44dvw);
+    height: calc(3.61dvw);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     margin-bottom: 8px;
-    font-size: 40px;
+    font-size: calc(2.77dvw);
     color: #E21E26;
 }
 
 .step-block{
-    width: 348px;
-    height: 178px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(24.16dvw);
+    height: calc(12.36dvw);
     border: 2px solid #000;
 }
 
 .step-block img{
-    width: 46px;
-    height: 46px;
+    width: calc(3.194dvw);
+    height: calc(3.194dvw);
     margin-top: 16px;
 }
 
 .step-block p{
-    font-size: 14px;
+    font-size: calc(0.83dvw);
+    width: calc(10dvw);
 }
 
 
@@ -851,38 +865,39 @@ input[type=number] {
     margin-top: 80px;
     background-color: #000;
     width: 100%;
-    height: 325px;
+    height: calc(20.83dvw);
     color: #fff;
 }
 
 .avialable-locations h2{
-    margin-top: 56px;
-    font-size: 34px;
+    margin-top: calc(3.88dvw);
+    font-size: calc(2.21dvw);
     font-weight: 300;
     margin-bottom: 0;
 }
 
 .our-locations{
-    margin-top: 80px;
+    margin-top: calc(5.55dvw);
     display: flex;
+    height: calc(20.83dvw);
     flex-direction: row;
     align-items: center;
 }
 
 .our-locations .vertical-line{
-    height: 41px;
+    height: calc(2.847dvw);
     width: 1px;
     background-color: #ffffff34;
 }
 
 .each-location{
-    width: 180px;
+    width: calc(13.99dvw);
     height: 29px;
     display: flex;
     align-items: center;
     flex-direction: row;
-    column-gap: 19px;
-    margin-left: 34px;
+    column-gap: calc(1.2dvw);
+    margin-left: calc(2.36dvw);
 }
 
 .each-location img{
@@ -891,7 +906,7 @@ input[type=number] {
 }
 
 .each-location p{
-    font-size: 19px;
+    font-size: calc(1.38dvw);
     font-weight: 300;
 }
 
@@ -900,8 +915,8 @@ input[type=number] {
 /* FAQ section */
 .FAQ{
     margin-top: 56px;
-    padding-right: 89px;
-    padding-left: 89px;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 
@@ -911,7 +926,7 @@ input[type=number] {
 
 h2 {
     text-align: center;
-    font-size: 34px;
+    font-size: calc(2.36dvw);
     font-weight: 400;
     margin-bottom: 20px;
 }
@@ -929,12 +944,12 @@ h2 {
 }
 
 .faq-question span {
-    font-size: 16px;
+    font-size: calc(1.11dvw);
     font-weight: 400;
 }
 
 .faq-toggle {
-    font-size: 24px;
+    font-size: calc(1.66dvw);
     font-weight: 300;
 }
 
@@ -942,7 +957,7 @@ h2 {
     display: none;
     padding: 10px 0;
     color: #666;
-    font-size: 14px;
+    font-size: calc(1.11dvw);
 }
 
 .faq-answer p {
@@ -955,7 +970,7 @@ h2 {
 /* Footer section */
 
 .footer{
-    margin-top: 120px;
+    margin-top: calc(8.33dvw);
     position: relative;
     width: 100dvw;
     min-height: fit-content;
@@ -970,10 +985,10 @@ h2 {
 
 
 .footer-container {
-    margin-left: 80px;
-    margin-right: 80px;
-    padding-top: 40px;
-    height: 200px;
+    margin-left: calc(5.55dvw);
+    margin-right: calc(5.55dvw);
+    padding-top: calc(2.77dvw);
+    height: calc(13.88)dvw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -981,28 +996,28 @@ h2 {
 }
 
 .footer-logo {
-    max-width: 200px;
+    max-width: calc(13.888dvw);
     flex-shrink: 0;
 }
 
 .footer-logo img {
-    width: 57px;
-    height: 66px;
+    width: calc(3.95dvw);
+    height: calc(4.58dvw);
     margin-bottom: 10px;
 }
 
 .footer-logo p{
     color: #fff;
-    font-size: 12px;
+    font-size: calc(0.83dvw);
     margin: 0;
-    width: 105px;
+    width: calc(7.28dvw);
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    margin-left: 230px;
+    margin-left: calc(15.97dvw);
 }
 
 .footer-column {
@@ -1011,20 +1026,20 @@ h2 {
 
 .footer-column ul {
     display: grid;
-    grid-template-columns: repeat(4,120px);
+    grid-template-columns: repeat(4,calc(8.33dvw));
     list-style: none;
     padding: 0;
 }
 
 .footer-column ul li {
-    font-size: 13px;
+    font-size: calc(0.9dvw);
     margin-bottom: 10px;
 }
 
 .footer-column ul li a ,.AlHabthoor-companyList ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: calc(0.91dvw);
 }
 
 .footer-column ul li a:hover {
@@ -1033,27 +1048,27 @@ h2 {
 
 
 .AlHabthoor-companyList{
-    height: 57px;
+    height: calc(3.95dvw);
 }
 
 .AlHabthoor-companyList p{
-    font-size: 13px;
+    font-size: calc(0.9dvw);
     margin: 0;
     color: #fff;
 }
 
 
 .AlHabthoor-companyList ul{
-    margin-top: 15px;
+    margin-top: calc(1dvw);
     padding: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
-    column-gap: 21px;
+    column-gap: calc(1.45dvw);
 }
 
 .AlHabthoor-companyList ul li{
-    font-size: 13px;
+    font-size: calc(0.9dvw);
 }
 
 .footer-right {
@@ -1065,13 +1080,13 @@ h2 {
     list-style: none;
     display: flex;
     margin: 0;
-    column-gap: 14px;
+    column-gap: calc(0.95dvw);
 }
 
 .social-media p{
-    font-size: 14px;
+    font-size: calc(1dvw);
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: calc(0.69dvw);
 }
 
 .social-media ul li {
@@ -1080,13 +1095,13 @@ h2 {
 
 .social-media ul li a {
     color: #fff;
-    font-size: 18px;
+    font-size: calc(1.9dvw);
     text-decoration: none;
 }
 
 .social-media ul li a img {
-    width: 17px;
-    height: 17px;
+    width: calc(1.18dvw);
+    height: calc(1.18 dvw);
 }
 
 .footer-certificates{
@@ -1474,12 +1489,14 @@ h2 {
     /* input for the subscribe form */
     .name-email input{
         width: 328px;
+        height: 50px;
     }
 
     /* paragraph in the form */
     .subscribe-para{
         font-size: 12px;
         width: 328px;
+        height: 60px;
     }
 
     /* button for form submission */
@@ -1495,6 +1512,7 @@ h2 {
         justify-content: center;
         align-items: flex-start;
         height: 390px;
+        width: 100%;
     }
 
     /* Mobile phone image */
@@ -1512,13 +1530,21 @@ h2 {
 
     /* small contents on there  */
     .link-share div p{
+        height: 50px;
         font-size: 12px;
         width: 143px;
 
     }
 
+    .link-share button{
+        width: 120px;
+        height: 40px;
+
+    }
+
     /* mobile number input */
     .link-share input {
+        height: 30px;
         width: 160px;
     }
 
@@ -1552,6 +1578,8 @@ h2 {
     /* id for the each block */
     .step-id{
         font-size: 28px;
+        width: 35px;
+        height: 35px;
     }
 
     /* each step block containing info */
@@ -1560,6 +1588,12 @@ h2 {
         flex-direction: column;
         align-items: center;
         height: 167px;
+        width: 80%;
+    }
+
+    .step-block img{
+        width: 50px;
+        height: 50px;
     }
 
     .step-block p{
@@ -1615,6 +1649,14 @@ h2 {
         padding: 0 10px 0 10px;
     }
 
+    .faq-toggle{
+        font-size: 16px;
+    }
+
+    .faq-question span{
+        font-size: 14px;
+    }
+
     .faq-container h2{
         margin: 0 5px 0 5px;
         font-size: 16px;
@@ -1624,12 +1666,12 @@ h2 {
 
     /* faq question  */
     .faq-question{
-        font-size: 13px;
+        font-size: 13px !important;
     }
 
     /* faq answer  */
     .faq-answer{
-        font-size: 12px;
+        font-size: 12px !important;
         padding: 5px 0 5px 0;
     }
 
@@ -1695,6 +1737,7 @@ h2 {
         font-size: 12px;
         font-weight: 700;
         text-align: center;
+        width: 100px;
         justify-content: center;
         align-items: center;
         padding: 0;
@@ -1727,6 +1770,9 @@ h2 {
         gap: 20px;
     }
 
+    .company-list-mobile li{
+        width: 100px;
+    }
     .company-list-mobile li a{
         text-decoration: none;
         color: #fff;
